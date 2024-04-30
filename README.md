@@ -1,5 +1,5 @@
 # Ex.08 Design of a Standard Calculator
-## Date:25.04.2024
+## Date:30.04.2024
 
 ## AIM:
 To design a web application for a standard calculator with minimum five operations.
@@ -25,112 +25,161 @@ Validate the HTML and CSS code.
 Publish the website in the given URL.
 
 ## PROGRAM :
-calcapp.html
+calc.html
 
 ```
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CALCULATOR</title>
-<script>
-function fn(e){
-    if (e.innerHTML == '=') {
-        output. value = eval (output.value);
-}
-else if (e.id == 'back') {
-    v = output. value;
-    output. value = v.substring(0, v.length - 1);
-}
-else if (e. innerHTML == 'C') {
-    output. value = '';
-}
-else {
-    output.value += e.innerHTML;
-}
-}
-</script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="bg-warning mx-auto text-center text-green" style="width: 24rem;">RANJANI A</div>
-    <div class="bg-warning mx-auto text-center text-pink" style="width: 24rem;">212223230170</div>
-    <div class="bg-warning row mx-auto text-center" style="width: 24rem;" >
-         <div class="col-12 my-4"><input type="text" name="" id="output" style="width: 100%;height: 50px;border-radius: 25px;"></div> 
-            <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)" >(</div> 
-            <div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">)</div> 
-            <div class="m-3 col-2 btn btn-danger rounded-4" onclick="fn(this)">C</div> 
-            <div class="m-3 col-2 btn btn-danger rounded-4" onclick="fn(this)" id="pink"><i class="bi bi-backspace"></i>
-</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">7</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">8</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">9</div> 
-<div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">*</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">4</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">5</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">6</div>
-<div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">-</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">1</div> 
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">2</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">3</div>
-<div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">+</div>
-<div class="m-3 col-2 btn btn-success rounded-4" onclick="fn(this)">0</div>
-<div class="m-3 col-2 btn btn-success rounded-4" btn-success onclick="fn(this)">.</div>
-<div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">%</div>
-<div class="m-3 col-2 btn btn-primary rounded-4" onclick="fn(this)">/</div> 
-<div class="m-3 col-11 btn btn-dark rounded-4" onclick="fn(this)">=</div>
-</div>
+<body bgcolor="LIGHTBLUE">
+    <div class="container">
+        <h1>CALCULATOR</h1>
+        <h2 class="text">RANJANI A (212223230170)</h2><br>
+
+        <div class="calculator">
+            <input type="text" name="screen" id="screen">
+            <table>
+                <tr>
+                    <td><button class="color">(</button></td>
+                    <td><button class="color">)</button></td>
+                    <td><button class="color">%</button></td>
+                    <td><button class="color">c</button></td>
+                </tr>
+                <tr>
+                    <td><button>3</button></td>
+                    <td><button>6</button></td>
+                    <td><button>9</button></td>
+                    <td><button class="color">+</button></td>
+                </tr>
+                <tr>
+                    <td><button>2</button></td>
+                    <td><button>5</button></td>
+                    <td><button>8</button></td>
+                    <td><button class="color">-</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>4</button></td>
+                    <td><button>7</button></td>
+                    <td><button class="color">*</button></td>
+                </tr>
+                <tr>
+                    <td><button>0</button></td>
+                    <td><button class="color">/</button></td>
+                    <td><button class="color">.</button></td>
+                    <td><button class="color">=</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
 ```
-
 style.css
-
 ```
-table{
-    border: 5px solid black;
-    margin-left:auto;
-    margin-right: auto;
+.container {
+    text-align: center;
+    margin-top: 25px;
     
 }
-input[type="text"]{
-    border: 3px solid black;
-    padding: 20px 30px;
-    font-size: 24px;
+
+
+.calculator {
+    text-align: center;
+    border: none;
+    background-color: #2cedd3;
+    padding: 100px;
+    border-radius: 80px;
+    display: inline-block;
+}
+
+h1 {
+    font-size: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-size: 45px;
     font-weight: bold;
-    border-radius: 20px;
-    background-color: bisque;
+    color: rgb(223, 14, 202);
+    text-align: center;
+    margin: border;
+    margin-top: 25px;
 }
 
+input {
 
-input[type="button"]{
-    width: 100%;
-    padding: 20px 40px;
-    background-color:rgb(60, 207, 230);
-    border-radius: 10px;
-    font-size: medium;
+    border-radius: 25px;
+    border: 8px solid rgb(60, 215, 54);
+    padding: 25px;
+    background: rgb(14, 238, 193);
+    font-size: 50px;
+    height: 55x;
+    width: 320px;
+    color: rgb(11, 11, 11);
 }
 
+table {
+    margin: auto;
+}
+
+button {
+    border-radius: 25px;
+    border: 15;
+    outline: 0px;
+    box-shadow: -8px -8px 15px rgba(180, 180, 180, 0.1),  5px 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 35px;
+    background: rgb(21, 228, 69);
+    color: rgb(62, 60, 60);
+    width: 80px;
+    height: 80px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.color {
+    color: rgb(231, 242,243);}
 ```
 
 index.js
 
 ```
-function display(value){
-    document.getElementById("result").value+=value;
- }
-  function clear(){
-     document.getElementById("result").value='';
-  }
-  function solve(){
-    let x = document.getElementById('result').value
-    let y = eval(x);
-    document.getElementById('result').value = y
-    return y
+let screen = document.getElementById('screen');
+buttons = document.querySelectorAll('button');
+let screenValue = '';
+for (item of buttons) {
+    item.addEventListener('click', (e) => {
+        buttonText = e.target.innerText;
+        console.log('Button text is ', buttonText);
+        if (buttonText == 'X') {
+            buttonText = '*';
+            screenValue += buttonText;
+            screen.value = screenValue;
+        }
+        else if (buttonText == 'C') {
+            screenValue = "";
+            screen.value = screenValue;
+        }
+        else if (buttonText == '=') {
+            screen.value = eval(screenValue);
+        }
+        else {
+            screenValue += buttonText;
+            screen.value = screenValue;
+        }
+    })
 }
 ```
-
 ## OUTPUT:
-![alt text](image.png)
-![alt text](image-1.png)
+![alt text](<Screenshot (232).png>)
+![alt text](<Screenshot (233).png>)
 ## RESULT:
 The program for designing a standard calculator using HTML and CSS is executed successfully.
